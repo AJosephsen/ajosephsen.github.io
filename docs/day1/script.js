@@ -1,74 +1,78 @@
-// Get the canvas element from the DOM
-const canvas = document.getElementById('pong');
-const context = canvas.getContext('2d');
+const { Game, Key, Container, Sprite } = PixelJS;
+
+// Create the game instance
+const game = new Game(800, 400);
+
+// Create the container to hold the game objects
+const container = new Container();
 
 // Create the pong paddle
 const paddleWidth = 10, paddleHeight = 100;
-const player = { x: 0, y: canvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, color: '#FFF' };
-const computer = { x: canvas.width - paddleWidth, y: canvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, color: '#FFF' };
+const player = new Sprite();
+player.setAnchor(0, 0.5);
+player.setSize(paddleWidth, paddleHeight);
+player.setColor("#FFF");
+player.setPosition(0, game.height / 2);
+
+const computer = new Sprite();
+computer.setAnchor(1, 0.5);
+computer.setSize(paddleWidth, paddleHeight);
+computer.setColor("#FFF");
+computer.setPosition(game.width, game.height / 2);
 
 // Create the pong ball
-const ball = { x: canvas.width / 2, y: canvas.height / 2, radius: 10, speed: 4, dx: 4, dy: 4, color: '#FF0000' };
+const ball = new Sprite();
+ball.setAnchor(0.5, 0.5);
+ball.setSize(20, 20);
+ball.setColor("#FF0000");
+ball.setPosition(game.width / 2, game.height / 2);
 
-// Draw the paddles on the canvas
-function drawPaddle(x, y, width, height, color) {
-  context.fillStyle = color;
-  context.fillRect(x, y, width, height);
-}
+// Add the game objects to the container
+container.addChild(player);
+container.addChild(computer);
+container.addChild(ball);
 
-// Draw the ball on the canvas
-function drawBall(x, y, radius, color) {
-  context.fillStyle = color;
-  context.beginPath();
-  context.arc(x, y, radius, 0, Math.PI * 2, false);
-  context.closePath();
-  context.fill();
-}
+// Add the container to the game
+game.stage.addChild(container);
 
-// Update the canvas and objects
-function update() {
-  // Clear the canvas
-  context.clearRect(0, 0, canvas.width, canvas.height);
+// Handle keyboard input
+game.onUpdate = function (deltaTime) {
+  if (game.keyboard.isKeyDown(Key.Up) && player.y > 0) {
+    player.move(0, -10);
+  }
 
-  // Draw the paddles
-  drawPaddle(player.x, player.y, player.width, player.height, player.color);
-  drawPaddle(computer.x, computer.y, computer.width, computer.height, computer.color);
+  if (game.keyboard.isKeyDown(Key.Down) && player.y < game.height) {
+    player.move(0, 10);
+  }
+};
 
-  // Draw the ball
-  drawBall(ball.x, ball.y, ball.radius, ball.color);
-
+// Update the game state
+game.onUpdate = function (deltaTime) {
   // Move the ball
-  ball.x += ball.dx;
-  ball.y += ball.dy;
+  ball.move(4, 4);
 
   // Collision detection with paddles
   if (
-    ball.y + ball.radius > player.y &&
-    ball.y - ball.radius < player.y + player.height &&
-    ball.dx < 0
+    ball.y + ball.height / 2 > player.y - player.height / 2 &&
+    ball.y - ball.height / 2 < player.y + player.height / 2 &&
+    ball.vx < 0
   ) {
-    ball.dx *= -1;
+    ball.vx *= -1;
   }
 
   if (
-    ball.y + ball.radius > computer.y &&
-    ball.y - ball.radius < computer.y + computer.height &&
-    ball.dx > 0
+    ball.y + ball.height / 2 > computer.y - computer.height / 2 &&
+    ball.y - ball.height / 2 < computer.y + computer.height / 2 &&
+    ball.vx > 0
   ) {
-    ball.dx *= -1;
+    ball.vx *= -1;
   }
 
   // Reverse ball direction if it hits top or bottom edges
-  if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
-    ball.dy *= -1;
+  if (ball.y + ball.height / 2 > game.height || ball.y - ball.height / 2 < 0) {
+    ball.vy *= -1;
   }
-}
+};
 
-// Update the game state and render the canvas
-function gameLoop() {
-  update();
-  requestAnimationFrame(gameLoop);
-}
-
-// Start the game loop
-gameLoop();
+// Start the game
+game.start();

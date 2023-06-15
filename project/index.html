@@ -4464,17 +4464,13 @@ var $elm$core$Set$toList = function (_v0) {
 	return $elm$core$Dict$keys(dict);
 };
 var $elm$core$Basics$GT = {$: 'GT'};
-var $evancz$elm_playground$Playground$Game = F3(
-	function (a, b, c) {
-		return {$: 'Game', a: a, b: b, c: c};
-	});
-var $evancz$elm_playground$Playground$GotViewport = function (a) {
-	return {$: 'GotViewport', a: a};
+var $elm$core$Basics$identity = function (x) {
+	return x;
 };
-var $evancz$elm_playground$Playground$VisibilityChanged = function (a) {
-	return {$: 'VisibilityChanged', a: a};
+var $author$project$Main$Frame = function (a) {
+	return {$: 'Frame', a: a};
 };
-var $elm$browser$Browser$Events$Visible = {$: 'Visible'};
+var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Result$Err = function (a) {
 	return {$: 'Err', a: a};
 };
@@ -4497,7 +4493,6 @@ var $elm$json$Json$Decode$OneOf = function (a) {
 	return {$: 'OneOf', a: a};
 };
 var $elm$core$Basics$False = {$: 'False'};
-var $elm$core$Basics$add = _Basics_add;
 var $elm$core$Maybe$Just = function (a) {
 	return {$: 'Just', a: a};
 };
@@ -4891,9 +4886,6 @@ var $elm$browser$Browser$External = function (a) {
 var $elm$browser$Browser$Internal = function (a) {
 	return {$: 'Internal', a: a};
 };
-var $elm$core$Basics$identity = function (x) {
-	return x;
-};
 var $elm$browser$Browser$Dom$NotFound = function (a) {
 	return {$: 'NotFound', a: a};
 };
@@ -5183,31 +5175,11 @@ var $elm$core$Task$perform = F2(
 			$elm$core$Task$Perform(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
-var $elm$browser$Browser$document = _Browser_document;
-var $evancz$elm_playground$Playground$KeyChanged = F2(
-	function (a, b) {
-		return {$: 'KeyChanged', a: a, b: b};
-	});
-var $evancz$elm_playground$Playground$MouseButton = function (a) {
-	return {$: 'MouseButton', a: a};
-};
-var $evancz$elm_playground$Playground$MouseClick = {$: 'MouseClick'};
-var $evancz$elm_playground$Playground$MouseMove = F2(
-	function (a, b) {
-		return {$: 'MouseMove', a: a, b: b};
-	});
-var $evancz$elm_playground$Playground$Resized = F2(
-	function (a, b) {
-		return {$: 'Resized', a: a, b: b};
-	});
-var $evancz$elm_playground$Playground$Tick = function (a) {
-	return {$: 'Tick', a: a};
-};
-var $elm$core$Platform$Sub$batch = _Platform_batch;
-var $elm$json$Json$Decode$field = _Json_decodeField;
-var $elm$json$Json$Decode$float = _Json_decodeFloat;
-var $elm$browser$Browser$AnimationManager$Time = function (a) {
-	return {$: 'Time', a: a};
+var $elm$browser$Browser$element = _Browser_element;
+var $elm$core$Platform$Cmd$batch = _Platform_batch;
+var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
+var $elm$browser$Browser$AnimationManager$Delta = function (a) {
+	return {$: 'Delta', a: a};
 };
 var $elm$browser$Browser$AnimationManager$State = F3(
 	function (subs, request, oldTime) {
@@ -5313,8 +5285,8 @@ var $elm$browser$Browser$AnimationManager$onSelfMsg = F3(
 					$elm$core$Platform$sendToSelf(router),
 					$elm$browser$Browser$AnimationManager$rAF)));
 	});
-var $elm$browser$Browser$AnimationManager$Delta = function (a) {
-	return {$: 'Delta', a: a};
+var $elm$browser$Browser$AnimationManager$Time = function (a) {
+	return {$: 'Time', a: a};
 };
 var $elm$core$Basics$composeL = F3(
 	function (g, f, x) {
@@ -5335,1474 +5307,1227 @@ var $elm$browser$Browser$AnimationManager$subMap = F2(
 	});
 _Platform_effectManagers['Browser.AnimationManager'] = _Platform_createManager($elm$browser$Browser$AnimationManager$init, $elm$browser$Browser$AnimationManager$onEffects, $elm$browser$Browser$AnimationManager$onSelfMsg, 0, $elm$browser$Browser$AnimationManager$subMap);
 var $elm$browser$Browser$AnimationManager$subscription = _Platform_leaf('Browser.AnimationManager');
-var $elm$browser$Browser$AnimationManager$onAnimationFrame = function (tagger) {
+var $elm$browser$Browser$AnimationManager$onAnimationFrameDelta = function (tagger) {
 	return $elm$browser$Browser$AnimationManager$subscription(
-		$elm$browser$Browser$AnimationManager$Time(tagger));
+		$elm$browser$Browser$AnimationManager$Delta(tagger));
 };
-var $elm$browser$Browser$Events$onAnimationFrame = $elm$browser$Browser$AnimationManager$onAnimationFrame;
-var $elm$browser$Browser$Events$Document = {$: 'Document'};
-var $elm$browser$Browser$Events$MySub = F3(
+var $elm$browser$Browser$Events$onAnimationFrameDelta = $elm$browser$Browser$AnimationManager$onAnimationFrameDelta;
+var $joakin$elm_canvas$Canvas$Internal$Canvas$Fill = function (a) {
+	return {$: 'Fill', a: a};
+};
+var $joakin$elm_canvas$Canvas$Internal$Canvas$SettingDrawOp = function (a) {
+	return {$: 'SettingDrawOp', a: a};
+};
+var $joakin$elm_canvas$Canvas$Settings$fill = function (color) {
+	return $joakin$elm_canvas$Canvas$Internal$Canvas$SettingDrawOp(
+		$joakin$elm_canvas$Canvas$Internal$Canvas$Fill(color));
+};
+var $author$project$Main$height = 400;
+var $joakin$elm_canvas$Canvas$Internal$Canvas$Rect = F3(
 	function (a, b, c) {
-		return {$: 'MySub', a: a, b: b, c: c};
+		return {$: 'Rect', a: a, b: b, c: c};
 	});
-var $elm$browser$Browser$Events$State = F2(
-	function (subs, pids) {
-		return {pids: pids, subs: subs};
+var $joakin$elm_canvas$Canvas$rect = F3(
+	function (pos, width, height) {
+		return A3($joakin$elm_canvas$Canvas$Internal$Canvas$Rect, pos, width, height);
 	});
-var $elm$core$Dict$RBEmpty_elm_builtin = {$: 'RBEmpty_elm_builtin'};
-var $elm$core$Dict$empty = $elm$core$Dict$RBEmpty_elm_builtin;
-var $elm$browser$Browser$Events$init = $elm$core$Task$succeed(
-	A2($elm$browser$Browser$Events$State, _List_Nil, $elm$core$Dict$empty));
-var $elm$browser$Browser$Events$nodeToKey = function (node) {
-	if (node.$ === 'Document') {
-		return 'd_';
-	} else {
-		return 'w_';
-	}
+var $joakin$elm_canvas$Canvas$Internal$Canvas$DrawableShapes = function (a) {
+	return {$: 'DrawableShapes', a: a};
 };
-var $elm$browser$Browser$Events$addKey = function (sub) {
-	var node = sub.a;
-	var name = sub.b;
-	return _Utils_Tuple2(
-		_Utils_ap(
-			$elm$browser$Browser$Events$nodeToKey(node),
-			name),
-		sub);
+var $joakin$elm_canvas$Canvas$Internal$Canvas$NotSpecified = {$: 'NotSpecified'};
+var $joakin$elm_canvas$Canvas$Internal$Canvas$Renderable = function (a) {
+	return {$: 'Renderable', a: a};
 };
-var $elm$core$Dict$Black = {$: 'Black'};
-var $elm$core$Dict$RBNode_elm_builtin = F5(
-	function (a, b, c, d, e) {
-		return {$: 'RBNode_elm_builtin', a: a, b: b, c: c, d: d, e: e};
+var $joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke = F2(
+	function (a, b) {
+		return {$: 'FillAndStroke', a: a, b: b};
 	});
-var $elm$core$Dict$Red = {$: 'Red'};
-var $elm$core$Dict$balance = F5(
-	function (color, key, value, left, right) {
-		if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Red')) {
-			var _v1 = right.a;
-			var rK = right.b;
-			var rV = right.c;
-			var rLeft = right.d;
-			var rRight = right.e;
-			if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
-				var _v3 = left.a;
-				var lK = left.b;
-				var lV = left.c;
-				var lLeft = left.d;
-				var lRight = left.e;
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Red,
-					key,
-					value,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rLeft, rRight));
-			} else {
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					color,
-					rK,
-					rV,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, left, rLeft),
-					rRight);
-			}
-		} else {
-			if ((((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) && (left.d.$ === 'RBNode_elm_builtin')) && (left.d.a.$ === 'Red')) {
-				var _v5 = left.a;
-				var lK = left.b;
-				var lV = left.c;
-				var _v6 = left.d;
-				var _v7 = _v6.a;
-				var llK = _v6.b;
-				var llV = _v6.c;
-				var llLeft = _v6.d;
-				var llRight = _v6.e;
-				var lRight = left.e;
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Red,
-					lK,
-					lV,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, key, value, lRight, right));
-			} else {
-				return A5($elm$core$Dict$RBNode_elm_builtin, color, key, value, left, right);
-			}
-		}
-	});
-var $elm$core$Basics$compare = _Utils_compare;
-var $elm$core$Dict$insertHelp = F3(
-	function (key, value, dict) {
-		if (dict.$ === 'RBEmpty_elm_builtin') {
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, $elm$core$Dict$RBEmpty_elm_builtin, $elm$core$Dict$RBEmpty_elm_builtin);
-		} else {
-			var nColor = dict.a;
-			var nKey = dict.b;
-			var nValue = dict.c;
-			var nLeft = dict.d;
-			var nRight = dict.e;
-			var _v1 = A2($elm$core$Basics$compare, key, nKey);
-			switch (_v1.$) {
-				case 'LT':
-					return A5(
-						$elm$core$Dict$balance,
-						nColor,
-						nKey,
-						nValue,
-						A3($elm$core$Dict$insertHelp, key, value, nLeft),
-						nRight);
-				case 'EQ':
-					return A5($elm$core$Dict$RBNode_elm_builtin, nColor, nKey, value, nLeft, nRight);
-				default:
-					return A5(
-						$elm$core$Dict$balance,
-						nColor,
-						nKey,
-						nValue,
-						nLeft,
-						A3($elm$core$Dict$insertHelp, key, value, nRight));
-			}
-		}
-	});
-var $elm$core$Dict$insert = F3(
-	function (key, value, dict) {
-		var _v0 = A3($elm$core$Dict$insertHelp, key, value, dict);
-		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
-			var _v1 = _v0.a;
-			var k = _v0.b;
-			var v = _v0.c;
-			var l = _v0.d;
-			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
-		} else {
-			var x = _v0;
-			return x;
-		}
-	});
-var $elm$core$Dict$fromList = function (assocs) {
-	return A3(
-		$elm$core$List$foldl,
-		F2(
-			function (_v0, dict) {
-				var key = _v0.a;
-				var value = _v0.b;
-				return A3($elm$core$Dict$insert, key, value, dict);
-			}),
-		$elm$core$Dict$empty,
-		assocs);
+var $joakin$elm_canvas$Canvas$Internal$Canvas$Stroke = function (a) {
+	return {$: 'Stroke', a: a};
 };
-var $elm$core$Dict$foldl = F3(
-	function (func, acc, dict) {
-		foldl:
+var $joakin$elm_canvas$Canvas$mergeDrawOp = F2(
+	function (op1, op2) {
+		var _v0 = _Utils_Tuple2(op1, op2);
+		_v0$7:
 		while (true) {
-			if (dict.$ === 'RBEmpty_elm_builtin') {
-				return acc;
-			} else {
-				var key = dict.b;
-				var value = dict.c;
-				var left = dict.d;
-				var right = dict.e;
-				var $temp$func = func,
-					$temp$acc = A3(
-					func,
-					key,
-					value,
-					A3($elm$core$Dict$foldl, func, acc, left)),
-					$temp$dict = right;
-				func = $temp$func;
-				acc = $temp$acc;
-				dict = $temp$dict;
-				continue foldl;
+			switch (_v0.b.$) {
+				case 'FillAndStroke':
+					var _v1 = _v0.b;
+					var c = _v1.a;
+					var sc = _v1.b;
+					return A2($joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke, c, sc);
+				case 'Fill':
+					switch (_v0.a.$) {
+						case 'Fill':
+							var c = _v0.b.a;
+							return $joakin$elm_canvas$Canvas$Internal$Canvas$Fill(c);
+						case 'Stroke':
+							var c1 = _v0.a.a;
+							var c2 = _v0.b.a;
+							return A2($joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke, c2, c1);
+						case 'FillAndStroke':
+							var _v2 = _v0.a;
+							var sc = _v2.b;
+							var c2 = _v0.b.a;
+							return A2($joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke, c2, sc);
+						default:
+							break _v0$7;
+					}
+				case 'Stroke':
+					switch (_v0.a.$) {
+						case 'Stroke':
+							var c = _v0.b.a;
+							return $joakin$elm_canvas$Canvas$Internal$Canvas$Stroke(c);
+						case 'Fill':
+							var c1 = _v0.a.a;
+							var c2 = _v0.b.a;
+							return A2($joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke, c1, c2);
+						case 'FillAndStroke':
+							var _v3 = _v0.a;
+							var c = _v3.a;
+							var sc2 = _v0.b.a;
+							return A2($joakin$elm_canvas$Canvas$Internal$Canvas$FillAndStroke, c, sc2);
+						default:
+							break _v0$7;
+					}
+				default:
+					if (_v0.a.$ === 'NotSpecified') {
+						break _v0$7;
+					} else {
+						var whatever = _v0.a;
+						var _v5 = _v0.b;
+						return whatever;
+					}
 			}
 		}
+		var _v4 = _v0.a;
+		var whatever = _v0.b;
+		return whatever;
 	});
-var $elm$core$Dict$merge = F6(
-	function (leftStep, bothStep, rightStep, leftDict, rightDict, initialResult) {
-		var stepState = F3(
-			function (rKey, rValue, _v0) {
-				stepState:
-				while (true) {
-					var list = _v0.a;
-					var result = _v0.b;
-					if (!list.b) {
-						return _Utils_Tuple2(
-							list,
-							A3(rightStep, rKey, rValue, result));
-					} else {
-						var _v2 = list.a;
-						var lKey = _v2.a;
-						var lValue = _v2.b;
-						var rest = list.b;
-						if (_Utils_cmp(lKey, rKey) < 0) {
-							var $temp$rKey = rKey,
-								$temp$rValue = rValue,
-								$temp$_v0 = _Utils_Tuple2(
-								rest,
-								A3(leftStep, lKey, lValue, result));
-							rKey = $temp$rKey;
-							rValue = $temp$rValue;
-							_v0 = $temp$_v0;
-							continue stepState;
-						} else {
-							if (_Utils_cmp(lKey, rKey) > 0) {
-								return _Utils_Tuple2(
-									list,
-									A3(rightStep, rKey, rValue, result));
-							} else {
-								return _Utils_Tuple2(
-									rest,
-									A4(bothStep, lKey, lValue, rValue, result));
-							}
+var $joakin$elm_canvas$Canvas$addSettingsToRenderable = F2(
+	function (settings, renderable) {
+		var addSetting = F2(
+			function (setting, _v1) {
+				var r = _v1.a;
+				return $joakin$elm_canvas$Canvas$Internal$Canvas$Renderable(
+					function () {
+						switch (setting.$) {
+							case 'SettingCommand':
+								var cmd = setting.a;
+								return _Utils_update(
+									r,
+									{
+										commands: A2($elm$core$List$cons, cmd, r.commands)
+									});
+							case 'SettingCommands':
+								var cmds = setting.a;
+								return _Utils_update(
+									r,
+									{
+										commands: A3($elm$core$List$foldl, $elm$core$List$cons, r.commands, cmds)
+									});
+							case 'SettingUpdateDrawable':
+								var f = setting.a;
+								return _Utils_update(
+									r,
+									{
+										drawable: f(r.drawable)
+									});
+							default:
+								var op = setting.a;
+								return _Utils_update(
+									r,
+									{
+										drawOp: A2($joakin$elm_canvas$Canvas$mergeDrawOp, r.drawOp, op)
+									});
 						}
-					}
-				}
+					}());
 			});
-		var _v3 = A3(
-			$elm$core$Dict$foldl,
-			stepState,
-			_Utils_Tuple2(
-				$elm$core$Dict$toList(leftDict),
-				initialResult),
-			rightDict);
-		var leftovers = _v3.a;
-		var intermediateResult = _v3.b;
-		return A3(
-			$elm$core$List$foldl,
-			F2(
-				function (_v4, result) {
-					var k = _v4.a;
-					var v = _v4.b;
-					return A3(leftStep, k, v, result);
-				}),
-			intermediateResult,
-			leftovers);
+		return A3($elm$core$List$foldl, addSetting, renderable, settings);
 	});
-var $elm$browser$Browser$Events$Event = F2(
-	function (key, event) {
-		return {event: event, key: key};
-	});
-var $elm$browser$Browser$Events$spawn = F3(
-	function (router, key, _v0) {
-		var node = _v0.a;
-		var name = _v0.b;
-		var actualNode = function () {
-			if (node.$ === 'Document') {
-				return _Browser_doc;
-			} else {
-				return _Browser_window;
-			}
-		}();
+var $joakin$elm_canvas$Canvas$shapes = F2(
+	function (settings, ss) {
 		return A2(
-			$elm$core$Task$map,
-			function (value) {
-				return _Utils_Tuple2(key, value);
-			},
-			A3(
-				_Browser_on,
-				actualNode,
-				name,
-				function (event) {
-					return A2(
-						$elm$core$Platform$sendToSelf,
-						router,
-						A2($elm$browser$Browser$Events$Event, key, event));
+			$joakin$elm_canvas$Canvas$addSettingsToRenderable,
+			settings,
+			$joakin$elm_canvas$Canvas$Internal$Canvas$Renderable(
+				{
+					commands: _List_Nil,
+					drawOp: $joakin$elm_canvas$Canvas$Internal$Canvas$NotSpecified,
+					drawable: $joakin$elm_canvas$Canvas$Internal$Canvas$DrawableShapes(ss)
 				}));
 	});
-var $elm$core$Dict$union = F2(
-	function (t1, t2) {
-		return A3($elm$core$Dict$foldl, $elm$core$Dict$insert, t2, t1);
+var $avh4$elm_color$Color$RgbaSpace = F4(
+	function (a, b, c, d) {
+		return {$: 'RgbaSpace', a: a, b: b, c: c, d: d};
 	});
-var $elm$browser$Browser$Events$onEffects = F3(
-	function (router, subs, state) {
-		var stepRight = F3(
-			function (key, sub, _v6) {
-				var deads = _v6.a;
-				var lives = _v6.b;
-				var news = _v6.c;
-				return _Utils_Tuple3(
-					deads,
-					lives,
-					A2(
-						$elm$core$List$cons,
-						A3($elm$browser$Browser$Events$spawn, router, key, sub),
-						news));
-			});
-		var stepLeft = F3(
-			function (_v4, pid, _v5) {
-				var deads = _v5.a;
-				var lives = _v5.b;
-				var news = _v5.c;
-				return _Utils_Tuple3(
-					A2($elm$core$List$cons, pid, deads),
-					lives,
-					news);
-			});
-		var stepBoth = F4(
-			function (key, pid, _v2, _v3) {
-				var deads = _v3.a;
-				var lives = _v3.b;
-				var news = _v3.c;
-				return _Utils_Tuple3(
-					deads,
-					A3($elm$core$Dict$insert, key, pid, lives),
-					news);
-			});
-		var newSubs = A2($elm$core$List$map, $elm$browser$Browser$Events$addKey, subs);
-		var _v0 = A6(
-			$elm$core$Dict$merge,
-			stepLeft,
-			stepBoth,
-			stepRight,
-			state.pids,
-			$elm$core$Dict$fromList(newSubs),
-			_Utils_Tuple3(_List_Nil, $elm$core$Dict$empty, _List_Nil));
-		var deadPids = _v0.a;
-		var livePids = _v0.b;
-		var makeNewPids = _v0.c;
-		return A2(
-			$elm$core$Task$andThen,
-			function (pids) {
-				return $elm$core$Task$succeed(
-					A2(
-						$elm$browser$Browser$Events$State,
-						newSubs,
-						A2(
-							$elm$core$Dict$union,
-							livePids,
-							$elm$core$Dict$fromList(pids))));
-			},
-			A2(
-				$elm$core$Task$andThen,
-				function (_v1) {
-					return $elm$core$Task$sequence(makeNewPids);
-				},
-				$elm$core$Task$sequence(
-					A2($elm$core$List$map, $elm$core$Process$kill, deadPids))));
-	});
-var $elm$core$List$maybeCons = F3(
-	function (f, mx, xs) {
-		var _v0 = f(mx);
-		if (_v0.$ === 'Just') {
-			var x = _v0.a;
-			return A2($elm$core$List$cons, x, xs);
-		} else {
-			return xs;
-		}
-	});
-var $elm$core$List$filterMap = F2(
-	function (f, xs) {
-		return A3(
-			$elm$core$List$foldr,
-			$elm$core$List$maybeCons(f),
-			_List_Nil,
-			xs);
-	});
-var $elm$browser$Browser$Events$onSelfMsg = F3(
-	function (router, _v0, state) {
-		var key = _v0.key;
-		var event = _v0.event;
-		var toMessage = function (_v2) {
-			var subKey = _v2.a;
-			var _v3 = _v2.b;
-			var node = _v3.a;
-			var name = _v3.b;
-			var decoder = _v3.c;
-			return _Utils_eq(subKey, key) ? A2(_Browser_decodeEvent, decoder, event) : $elm$core$Maybe$Nothing;
-		};
-		var messages = A2($elm$core$List$filterMap, toMessage, state.subs);
-		return A2(
-			$elm$core$Task$andThen,
-			function (_v1) {
-				return $elm$core$Task$succeed(state);
-			},
-			$elm$core$Task$sequence(
-				A2(
-					$elm$core$List$map,
-					$elm$core$Platform$sendToApp(router),
-					messages)));
-	});
-var $elm$browser$Browser$Events$subMap = F2(
-	function (func, _v0) {
-		var node = _v0.a;
-		var name = _v0.b;
-		var decoder = _v0.c;
-		return A3(
-			$elm$browser$Browser$Events$MySub,
-			node,
-			name,
-			A2($elm$json$Json$Decode$map, func, decoder));
-	});
-_Platform_effectManagers['Browser.Events'] = _Platform_createManager($elm$browser$Browser$Events$init, $elm$browser$Browser$Events$onEffects, $elm$browser$Browser$Events$onSelfMsg, 0, $elm$browser$Browser$Events$subMap);
-var $elm$browser$Browser$Events$subscription = _Platform_leaf('Browser.Events');
-var $elm$browser$Browser$Events$on = F3(
-	function (node, name, decoder) {
-		return $elm$browser$Browser$Events$subscription(
-			A3($elm$browser$Browser$Events$MySub, node, name, decoder));
-	});
-var $elm$browser$Browser$Events$onClick = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'click');
-var $elm$browser$Browser$Events$onKeyDown = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'keydown');
-var $elm$browser$Browser$Events$onKeyUp = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'keyup');
-var $elm$browser$Browser$Events$onMouseDown = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'mousedown');
-var $elm$browser$Browser$Events$onMouseMove = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'mousemove');
-var $elm$browser$Browser$Events$onMouseUp = A2($elm$browser$Browser$Events$on, $elm$browser$Browser$Events$Document, 'mouseup');
-var $elm$browser$Browser$Events$Window = {$: 'Window'};
-var $elm$json$Json$Decode$int = _Json_decodeInt;
-var $elm$browser$Browser$Events$onResize = function (func) {
-	return A3(
-		$elm$browser$Browser$Events$on,
-		$elm$browser$Browser$Events$Window,
-		'resize',
-		A2(
-			$elm$json$Json$Decode$field,
-			'target',
-			A3(
-				$elm$json$Json$Decode$map2,
-				func,
-				A2($elm$json$Json$Decode$field, 'innerWidth', $elm$json$Json$Decode$int),
-				A2($elm$json$Json$Decode$field, 'innerHeight', $elm$json$Json$Decode$int))));
-};
-var $elm$json$Json$Decode$bool = _Json_decodeBool;
-var $elm$browser$Browser$Events$Hidden = {$: 'Hidden'};
-var $elm$browser$Browser$Events$withHidden = F2(
-	function (func, isHidden) {
-		return func(
-			isHidden ? $elm$browser$Browser$Events$Hidden : $elm$browser$Browser$Events$Visible);
-	});
-var $elm$browser$Browser$Events$onVisibilityChange = function (func) {
-	var info = _Browser_visibilityInfo(_Utils_Tuple0);
-	return A3(
-		$elm$browser$Browser$Events$on,
-		$elm$browser$Browser$Events$Document,
-		info.change,
-		A2(
-			$elm$json$Json$Decode$map,
-			$elm$browser$Browser$Events$withHidden(func),
-			A2(
-				$elm$json$Json$Decode$field,
-				'target',
-				A2($elm$json$Json$Decode$field, info.hidden, $elm$json$Json$Decode$bool))));
-};
-var $elm$json$Json$Decode$string = _Json_decodeString;
-var $evancz$elm_playground$Playground$gameSubscriptions = $elm$core$Platform$Sub$batch(
+var $avh4$elm_color$Color$white = A4($avh4$elm_color$Color$RgbaSpace, 255 / 255, 255 / 255, 255 / 255, 1.0);
+var $author$project$Main$width = 400;
+var $author$project$Main$clearScreen = A2(
+	$joakin$elm_canvas$Canvas$shapes,
 	_List_fromArray(
 		[
-			$elm$browser$Browser$Events$onResize($evancz$elm_playground$Playground$Resized),
-			$elm$browser$Browser$Events$onKeyUp(
-			A2(
-				$elm$json$Json$Decode$map,
-				$evancz$elm_playground$Playground$KeyChanged(false),
-				A2($elm$json$Json$Decode$field, 'key', $elm$json$Json$Decode$string))),
-			$elm$browser$Browser$Events$onKeyDown(
-			A2(
-				$elm$json$Json$Decode$map,
-				$evancz$elm_playground$Playground$KeyChanged(true),
-				A2($elm$json$Json$Decode$field, 'key', $elm$json$Json$Decode$string))),
-			$elm$browser$Browser$Events$onAnimationFrame($evancz$elm_playground$Playground$Tick),
-			$elm$browser$Browser$Events$onVisibilityChange($evancz$elm_playground$Playground$VisibilityChanged),
-			$elm$browser$Browser$Events$onClick(
-			$elm$json$Json$Decode$succeed($evancz$elm_playground$Playground$MouseClick)),
-			$elm$browser$Browser$Events$onMouseDown(
-			$elm$json$Json$Decode$succeed(
-				$evancz$elm_playground$Playground$MouseButton(true))),
-			$elm$browser$Browser$Events$onMouseUp(
-			$elm$json$Json$Decode$succeed(
-				$evancz$elm_playground$Playground$MouseButton(false))),
-			$elm$browser$Browser$Events$onMouseMove(
+			$joakin$elm_canvas$Canvas$Settings$fill($avh4$elm_color$Color$white)
+		]),
+	_List_fromArray(
+		[
 			A3(
-				$elm$json$Json$Decode$map2,
-				$evancz$elm_playground$Playground$MouseMove,
-				A2($elm$json$Json$Decode$field, 'pageX', $elm$json$Json$Decode$float),
-				A2($elm$json$Json$Decode$field, 'pageY', $elm$json$Json$Decode$float)))
+			$joakin$elm_canvas$Canvas$rect,
+			_Utils_Tuple2(0, 0),
+			$author$project$Main$width,
+			$author$project$Main$height)
 		]));
-var $evancz$elm_playground$Playground$Mouse = F4(
-	function (x, y, down, click) {
-		return {click: click, down: down, x: x, y: y};
-	});
-var $evancz$elm_playground$Playground$Time = function (a) {
-	return {$: 'Time', a: a};
+var $elm$html$Html$div = _VirtualDom_node('div');
+var $author$project$Main$centerX = $author$project$Main$width / 2;
+var $author$project$Main$centerY = $author$project$Main$height / 2;
+var $elm$core$Basics$pi = _Basics_pi;
+var $elm$core$Basics$degrees = function (angleInDegrees) {
+	return (angleInDegrees * $elm$core$Basics$pi) / 180;
 };
-var $elm$core$Set$Set_elm_builtin = function (a) {
-	return {$: 'Set_elm_builtin', a: a};
-};
-var $elm$core$Set$empty = $elm$core$Set$Set_elm_builtin($elm$core$Dict$empty);
-var $evancz$elm_playground$Playground$emptyKeyboard = {backspace: false, down: false, enter: false, keys: $elm$core$Set$empty, left: false, right: false, shift: false, space: false, up: false};
-var $evancz$elm_playground$Playground$mouseClick = F2(
-	function (bool, mouse) {
-		return _Utils_update(
-			mouse,
-			{click: bool});
+var $avh4$elm_color$Color$hsla = F4(
+	function (hue, sat, light, alpha) {
+		var _v0 = _Utils_Tuple3(hue, sat, light);
+		var h = _v0.a;
+		var s = _v0.b;
+		var l = _v0.c;
+		var m2 = (l <= 0.5) ? (l * (s + 1)) : ((l + s) - (l * s));
+		var m1 = (l * 2) - m2;
+		var hueToRgb = function (h__) {
+			var h_ = (h__ < 0) ? (h__ + 1) : ((h__ > 1) ? (h__ - 1) : h__);
+			return ((h_ * 6) < 1) ? (m1 + (((m2 - m1) * h_) * 6)) : (((h_ * 2) < 1) ? m2 : (((h_ * 3) < 2) ? (m1 + (((m2 - m1) * ((2 / 3) - h_)) * 6)) : m1));
+		};
+		var b = hueToRgb(h - (1 / 3));
+		var g = hueToRgb(h);
+		var r = hueToRgb(h + (1 / 3));
+		return A4($avh4$elm_color$Color$RgbaSpace, r, g, b, alpha);
 	});
-var $evancz$elm_playground$Playground$mouseDown = F2(
-	function (bool, mouse) {
-		return _Utils_update(
-			mouse,
-			{down: bool});
+var $avh4$elm_color$Color$hsl = F3(
+	function (h, s, l) {
+		return A4($avh4$elm_color$Color$hsla, h, s, l, 1.0);
 	});
-var $evancz$elm_playground$Playground$mouseMove = F3(
-	function (x, y, mouse) {
-		return _Utils_update(
-			mouse,
-			{x: x, y: y});
-	});
+var $elm$core$Basics$modBy = _Basics_modBy;
 var $elm$core$Basics$negate = function (n) {
 	return -n;
 };
-var $evancz$elm_playground$Playground$toScreen = F2(
-	function (width, height) {
-		return {bottom: (-height) / 2, height: height, left: (-width) / 2, right: width / 2, top: height / 2, width: width};
-	});
-var $elm$core$Set$insert = F2(
-	function (key, _v0) {
-		var dict = _v0.a;
-		return $elm$core$Set$Set_elm_builtin(
-			A3($elm$core$Dict$insert, key, _Utils_Tuple0, dict));
-	});
-var $elm$core$Dict$getMin = function (dict) {
-	getMin:
-	while (true) {
-		if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
-			var left = dict.d;
-			var $temp$dict = left;
-			dict = $temp$dict;
-			continue getMin;
-		} else {
-			return dict;
-		}
-	}
+var $joakin$elm_canvas$Canvas$Settings$Advanced$Rotate = function (a) {
+	return {$: 'Rotate', a: a};
 };
-var $elm$core$Dict$moveRedLeft = function (dict) {
-	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
-		if ((dict.e.d.$ === 'RBNode_elm_builtin') && (dict.e.d.a.$ === 'Red')) {
-			var clr = dict.a;
-			var k = dict.b;
-			var v = dict.c;
-			var _v1 = dict.d;
-			var lClr = _v1.a;
-			var lK = _v1.b;
-			var lV = _v1.c;
-			var lLeft = _v1.d;
-			var lRight = _v1.e;
-			var _v2 = dict.e;
-			var rClr = _v2.a;
-			var rK = _v2.b;
-			var rV = _v2.c;
-			var rLeft = _v2.d;
-			var _v3 = rLeft.a;
-			var rlK = rLeft.b;
-			var rlV = rLeft.c;
-			var rlL = rLeft.d;
-			var rlR = rLeft.e;
-			var rRight = _v2.e;
-			return A5(
-				$elm$core$Dict$RBNode_elm_builtin,
-				$elm$core$Dict$Red,
-				rlK,
-				rlV,
-				A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					rlL),
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, rK, rV, rlR, rRight));
-		} else {
-			var clr = dict.a;
-			var k = dict.b;
-			var v = dict.c;
-			var _v4 = dict.d;
-			var lClr = _v4.a;
-			var lK = _v4.b;
-			var lV = _v4.c;
-			var lLeft = _v4.d;
-			var lRight = _v4.e;
-			var _v5 = dict.e;
-			var rClr = _v5.a;
-			var rK = _v5.b;
-			var rV = _v5.c;
-			var rLeft = _v5.d;
-			var rRight = _v5.e;
-			if (clr.$ === 'Black') {
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
-			} else {
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
-			}
-		}
-	} else {
-		return dict;
-	}
+var $joakin$elm_canvas$Canvas$Settings$Advanced$rotate = $joakin$elm_canvas$Canvas$Settings$Advanced$Rotate;
+var $joakin$elm_canvas$Canvas$Internal$Canvas$SettingCommands = function (a) {
+	return {$: 'SettingCommands', a: a};
 };
-var $elm$core$Dict$moveRedRight = function (dict) {
-	if (((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) && (dict.e.$ === 'RBNode_elm_builtin')) {
-		if ((dict.d.d.$ === 'RBNode_elm_builtin') && (dict.d.d.a.$ === 'Red')) {
-			var clr = dict.a;
-			var k = dict.b;
-			var v = dict.c;
-			var _v1 = dict.d;
-			var lClr = _v1.a;
-			var lK = _v1.b;
-			var lV = _v1.c;
-			var _v2 = _v1.d;
-			var _v3 = _v2.a;
-			var llK = _v2.b;
-			var llV = _v2.c;
-			var llLeft = _v2.d;
-			var llRight = _v2.e;
-			var lRight = _v1.e;
-			var _v4 = dict.e;
-			var rClr = _v4.a;
-			var rK = _v4.b;
-			var rV = _v4.c;
-			var rLeft = _v4.d;
-			var rRight = _v4.e;
-			return A5(
-				$elm$core$Dict$RBNode_elm_builtin,
-				$elm$core$Dict$Red,
-				lK,
-				lV,
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, llK, llV, llLeft, llRight),
-				A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					lRight,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight)));
-		} else {
-			var clr = dict.a;
-			var k = dict.b;
-			var v = dict.c;
-			var _v5 = dict.d;
-			var lClr = _v5.a;
-			var lK = _v5.b;
-			var lV = _v5.c;
-			var lLeft = _v5.d;
-			var lRight = _v5.e;
-			var _v6 = dict.e;
-			var rClr = _v6.a;
-			var rK = _v6.b;
-			var rV = _v6.c;
-			var rLeft = _v6.d;
-			var rRight = _v6.e;
-			if (clr.$ === 'Black') {
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
-			} else {
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					$elm$core$Dict$Black,
-					k,
-					v,
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, lK, lV, lLeft, lRight),
-					A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, rK, rV, rLeft, rRight));
-			}
-		}
-	} else {
-		return dict;
-	}
+var $elm$json$Json$Encode$float = _Json_wrap;
+var $elm$json$Json$Encode$list = F2(
+	function (func, entries) {
+		return _Json_wrap(
+			A3(
+				$elm$core$List$foldl,
+				_Json_addEntry(func),
+				_Json_emptyArray(_Utils_Tuple0),
+				entries));
+	});
+var $elm$json$Json$Encode$object = function (pairs) {
+	return _Json_wrap(
+		A3(
+			$elm$core$List$foldl,
+			F2(
+				function (_v0, obj) {
+					var k = _v0.a;
+					var v = _v0.b;
+					return A3(_Json_addField, k, v, obj);
+				}),
+			_Json_emptyObject(_Utils_Tuple0),
+			pairs));
 };
-var $elm$core$Dict$removeHelpPrepEQGT = F7(
-	function (targetKey, dict, color, key, value, left, right) {
-		if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Red')) {
-			var _v1 = left.a;
-			var lK = left.b;
-			var lV = left.c;
-			var lLeft = left.d;
-			var lRight = left.e;
-			return A5(
-				$elm$core$Dict$RBNode_elm_builtin,
-				color,
-				lK,
-				lV,
-				lLeft,
-				A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Red, key, value, lRight, right));
-		} else {
-			_v2$2:
-			while (true) {
-				if ((right.$ === 'RBNode_elm_builtin') && (right.a.$ === 'Black')) {
-					if (right.d.$ === 'RBNode_elm_builtin') {
-						if (right.d.a.$ === 'Black') {
-							var _v3 = right.a;
-							var _v4 = right.d;
-							var _v5 = _v4.a;
-							return $elm$core$Dict$moveRedRight(dict);
-						} else {
-							break _v2$2;
-						}
-					} else {
-						var _v6 = right.a;
-						var _v7 = right.d;
-						return $elm$core$Dict$moveRedRight(dict);
-					}
-				} else {
-					break _v2$2;
-				}
-			}
-			return dict;
-		}
-	});
-var $elm$core$Dict$removeMin = function (dict) {
-	if ((dict.$ === 'RBNode_elm_builtin') && (dict.d.$ === 'RBNode_elm_builtin')) {
-		var color = dict.a;
-		var key = dict.b;
-		var value = dict.c;
-		var left = dict.d;
-		var lColor = left.a;
-		var lLeft = left.d;
-		var right = dict.e;
-		if (lColor.$ === 'Black') {
-			if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
-				var _v3 = lLeft.a;
-				return A5(
-					$elm$core$Dict$RBNode_elm_builtin,
-					color,
-					key,
-					value,
-					$elm$core$Dict$removeMin(left),
-					right);
-			} else {
-				var _v4 = $elm$core$Dict$moveRedLeft(dict);
-				if (_v4.$ === 'RBNode_elm_builtin') {
-					var nColor = _v4.a;
-					var nKey = _v4.b;
-					var nValue = _v4.c;
-					var nLeft = _v4.d;
-					var nRight = _v4.e;
-					return A5(
-						$elm$core$Dict$balance,
-						nColor,
-						nKey,
-						nValue,
-						$elm$core$Dict$removeMin(nLeft),
-						nRight);
-				} else {
-					return $elm$core$Dict$RBEmpty_elm_builtin;
-				}
-			}
-		} else {
-			return A5(
-				$elm$core$Dict$RBNode_elm_builtin,
-				color,
-				key,
-				value,
-				$elm$core$Dict$removeMin(left),
-				right);
-		}
-	} else {
-		return $elm$core$Dict$RBEmpty_elm_builtin;
-	}
-};
-var $elm$core$Dict$removeHelp = F2(
-	function (targetKey, dict) {
-		if (dict.$ === 'RBEmpty_elm_builtin') {
-			return $elm$core$Dict$RBEmpty_elm_builtin;
-		} else {
-			var color = dict.a;
-			var key = dict.b;
-			var value = dict.c;
-			var left = dict.d;
-			var right = dict.e;
-			if (_Utils_cmp(targetKey, key) < 0) {
-				if ((left.$ === 'RBNode_elm_builtin') && (left.a.$ === 'Black')) {
-					var _v4 = left.a;
-					var lLeft = left.d;
-					if ((lLeft.$ === 'RBNode_elm_builtin') && (lLeft.a.$ === 'Red')) {
-						var _v6 = lLeft.a;
-						return A5(
-							$elm$core$Dict$RBNode_elm_builtin,
-							color,
-							key,
-							value,
-							A2($elm$core$Dict$removeHelp, targetKey, left),
-							right);
-					} else {
-						var _v7 = $elm$core$Dict$moveRedLeft(dict);
-						if (_v7.$ === 'RBNode_elm_builtin') {
-							var nColor = _v7.a;
-							var nKey = _v7.b;
-							var nValue = _v7.c;
-							var nLeft = _v7.d;
-							var nRight = _v7.e;
-							return A5(
-								$elm$core$Dict$balance,
-								nColor,
-								nKey,
-								nValue,
-								A2($elm$core$Dict$removeHelp, targetKey, nLeft),
-								nRight);
-						} else {
-							return $elm$core$Dict$RBEmpty_elm_builtin;
-						}
-					}
-				} else {
-					return A5(
-						$elm$core$Dict$RBNode_elm_builtin,
-						color,
-						key,
-						value,
-						A2($elm$core$Dict$removeHelp, targetKey, left),
-						right);
-				}
-			} else {
-				return A2(
-					$elm$core$Dict$removeHelpEQGT,
-					targetKey,
-					A7($elm$core$Dict$removeHelpPrepEQGT, targetKey, dict, color, key, value, left, right));
-			}
-		}
-	});
-var $elm$core$Dict$removeHelpEQGT = F2(
-	function (targetKey, dict) {
-		if (dict.$ === 'RBNode_elm_builtin') {
-			var color = dict.a;
-			var key = dict.b;
-			var value = dict.c;
-			var left = dict.d;
-			var right = dict.e;
-			if (_Utils_eq(targetKey, key)) {
-				var _v1 = $elm$core$Dict$getMin(right);
-				if (_v1.$ === 'RBNode_elm_builtin') {
-					var minKey = _v1.b;
-					var minValue = _v1.c;
-					return A5(
-						$elm$core$Dict$balance,
-						color,
-						minKey,
-						minValue,
-						left,
-						$elm$core$Dict$removeMin(right));
-				} else {
-					return $elm$core$Dict$RBEmpty_elm_builtin;
-				}
-			} else {
-				return A5(
-					$elm$core$Dict$balance,
-					color,
-					key,
-					value,
-					left,
-					A2($elm$core$Dict$removeHelp, targetKey, right));
-			}
-		} else {
-			return $elm$core$Dict$RBEmpty_elm_builtin;
-		}
-	});
-var $elm$core$Dict$remove = F2(
-	function (key, dict) {
-		var _v0 = A2($elm$core$Dict$removeHelp, key, dict);
-		if ((_v0.$ === 'RBNode_elm_builtin') && (_v0.a.$ === 'Red')) {
-			var _v1 = _v0.a;
-			var k = _v0.b;
-			var v = _v0.c;
-			var l = _v0.d;
-			var r = _v0.e;
-			return A5($elm$core$Dict$RBNode_elm_builtin, $elm$core$Dict$Black, k, v, l, r);
-		} else {
-			var x = _v0;
-			return x;
-		}
-	});
-var $elm$core$Set$remove = F2(
-	function (key, _v0) {
-		var dict = _v0.a;
-		return $elm$core$Set$Set_elm_builtin(
-			A2($elm$core$Dict$remove, key, dict));
-	});
-var $evancz$elm_playground$Playground$updateKeyboard = F3(
-	function (isDown, key, keyboard) {
-		var keys = isDown ? A2($elm$core$Set$insert, key, keyboard.keys) : A2($elm$core$Set$remove, key, keyboard.keys);
-		switch (key) {
-			case ' ':
-				return _Utils_update(
-					keyboard,
-					{keys: keys, space: isDown});
-			case 'Enter':
-				return _Utils_update(
-					keyboard,
-					{enter: isDown, keys: keys});
-			case 'Shift':
-				return _Utils_update(
-					keyboard,
-					{keys: keys, shift: isDown});
-			case 'Backspace':
-				return _Utils_update(
-					keyboard,
-					{backspace: isDown, keys: keys});
-			case 'ArrowUp':
-				return _Utils_update(
-					keyboard,
-					{keys: keys, up: isDown});
-			case 'ArrowDown':
-				return _Utils_update(
-					keyboard,
-					{down: isDown, keys: keys});
-			case 'ArrowLeft':
-				return _Utils_update(
-					keyboard,
-					{keys: keys, left: isDown});
-			case 'ArrowRight':
-				return _Utils_update(
-					keyboard,
-					{keys: keys, right: isDown});
-			default:
-				return _Utils_update(
-					keyboard,
-					{keys: keys});
-		}
-	});
-var $evancz$elm_playground$Playground$gameUpdate = F3(
-	function (updateMemory, msg, _v0) {
-		var vis = _v0.a;
-		var memory = _v0.b;
-		var computer = _v0.c;
-		switch (msg.$) {
-			case 'Tick':
-				var time = msg.a;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					A2(updateMemory, computer, memory),
-					computer.mouse.click ? _Utils_update(
-						computer,
-						{
-							mouse: A2($evancz$elm_playground$Playground$mouseClick, false, computer.mouse),
-							time: $evancz$elm_playground$Playground$Time(time)
-						}) : _Utils_update(
-						computer,
-						{
-							time: $evancz$elm_playground$Playground$Time(time)
-						}));
-			case 'GotViewport':
-				var viewport = msg.a.viewport;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							screen: A2($evancz$elm_playground$Playground$toScreen, viewport.width, viewport.height)
-						}));
-			case 'Resized':
-				var w = msg.a;
-				var h = msg.b;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							screen: A2($evancz$elm_playground$Playground$toScreen, w, h)
-						}));
-			case 'KeyChanged':
-				var isDown = msg.a;
-				var key = msg.b;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							keyboard: A3($evancz$elm_playground$Playground$updateKeyboard, isDown, key, computer.keyboard)
-						}));
-			case 'MouseMove':
-				var pageX = msg.a;
-				var pageY = msg.b;
-				var y = computer.screen.top - pageY;
-				var x = computer.screen.left + pageX;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							mouse: A3($evancz$elm_playground$Playground$mouseMove, x, y, computer.mouse)
-						}));
-			case 'MouseClick':
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							mouse: A2($evancz$elm_playground$Playground$mouseClick, true, computer.mouse)
-						}));
-			case 'MouseButton':
-				var isDown = msg.a;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					vis,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							mouse: A2($evancz$elm_playground$Playground$mouseDown, isDown, computer.mouse)
-						}));
-			default:
-				var visibility = msg.a;
-				return A3(
-					$evancz$elm_playground$Playground$Game,
-					visibility,
-					memory,
-					_Utils_update(
-						computer,
-						{
-							keyboard: $evancz$elm_playground$Playground$emptyKeyboard,
-							mouse: A4($evancz$elm_playground$Playground$Mouse, computer.mouse.x, computer.mouse.y, false, false)
-						}));
-		}
-	});
-var $elm$browser$Browser$Dom$getViewport = _Browser_withWindow(_Browser_getViewport);
-var $evancz$elm_playground$Playground$initialComputer = {
-	keyboard: $evancz$elm_playground$Playground$emptyKeyboard,
-	mouse: A4($evancz$elm_playground$Playground$Mouse, 0, 0, false, false),
-	screen: A2($evancz$elm_playground$Playground$toScreen, 600, 600),
-	time: $evancz$elm_playground$Playground$Time(
-		$elm$time$Time$millisToPosix(0))
-};
-var $elm$core$Platform$Cmd$batch = _Platform_batch;
-var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
-var $elm$core$String$fromFloat = _String_fromNumber;
-var $elm$svg$Svg$Attributes$height = _VirtualDom_attribute('height');
-var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
-var $elm$svg$Svg$g = $elm$svg$Svg$trustedNode('g');
-var $elm$core$Basics$clamp = F3(
-	function (low, high, number) {
-		return (_Utils_cmp(number, low) < 0) ? low : ((_Utils_cmp(number, high) > 0) ? high : number);
-	});
-var $elm$svg$Svg$Attributes$opacity = _VirtualDom_attribute('opacity');
-var $evancz$elm_playground$Playground$renderAlpha = function (alpha) {
-	return (alpha === 1) ? _List_Nil : _List_fromArray(
-		[
-			$elm$svg$Svg$Attributes$opacity(
-			$elm$core$String$fromFloat(
-				A3($elm$core$Basics$clamp, 0, 1, alpha)))
-		]);
-};
-var $elm$svg$Svg$circle = $elm$svg$Svg$trustedNode('circle');
-var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
-var $elm$svg$Svg$Attributes$r = _VirtualDom_attribute('r');
-var $evancz$elm_playground$Playground$renderColor = function (color) {
-	if (color.$ === 'Hex') {
-		var str = color.a;
-		return str;
-	} else {
-		var r = color.a;
-		var g = color.b;
-		var b = color.c;
-		return 'rgb(' + ($elm$core$String$fromInt(r) + (',' + ($elm$core$String$fromInt(g) + (',' + ($elm$core$String$fromInt(b) + ')')))));
-	}
-};
-var $evancz$elm_playground$Playground$renderTransform = F4(
-	function (x, y, a, s) {
-		return (!a) ? ((s === 1) ? ('translate(' + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(-y) + ')')))) : ('translate(' + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(-y) + (') scale(' + ($elm$core$String$fromFloat(s) + ')'))))))) : ((s === 1) ? ('translate(' + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(-y) + (') rotate(' + ($elm$core$String$fromFloat(-a) + ')')))))) : ('translate(' + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(-y) + (') rotate(' + ($elm$core$String$fromFloat(-a) + (') scale(' + ($elm$core$String$fromFloat(s) + ')')))))))));
-	});
-var $elm$svg$Svg$Attributes$transform = _VirtualDom_attribute('transform');
-var $evancz$elm_playground$Playground$renderCircle = F7(
-	function (color, radius, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$circle,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$r(
-					$elm$core$String$fromFloat(radius)),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$fill(
-						$evancz$elm_playground$Playground$renderColor(color)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$transform(
-							A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-						$evancz$elm_playground$Playground$renderAlpha(alpha)))),
-			_List_Nil);
-	});
-var $elm$svg$Svg$image = $elm$svg$Svg$trustedNode('image');
-var $evancz$elm_playground$Playground$renderRectTransform = F6(
-	function (width, height, x, y, angle, s) {
-		return A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s) + (' translate(' + ($elm$core$String$fromFloat((-width) / 2) + (',' + ($elm$core$String$fromFloat((-height) / 2) + ')'))));
-	});
-var $elm$svg$Svg$Attributes$width = _VirtualDom_attribute('width');
-var $elm$svg$Svg$Attributes$xlinkHref = function (value) {
-	return A3(
-		_VirtualDom_attributeNS,
-		'http://www.w3.org/1999/xlink',
-		'xlink:href',
-		_VirtualDom_noJavaScriptUri(value));
-};
-var $evancz$elm_playground$Playground$renderImage = F8(
-	function (w, h, src, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$image,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$xlinkHref(src),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$width(
-						$elm$core$String$fromFloat(w)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromFloat(h)),
-						A2(
-							$elm$core$List$cons,
-							$elm$svg$Svg$Attributes$transform(
-								A6($evancz$elm_playground$Playground$renderRectTransform, w, h, x, y, angle, s)),
-							$evancz$elm_playground$Playground$renderAlpha(alpha))))),
-			_List_Nil);
-	});
-var $elm$svg$Svg$Attributes$points = _VirtualDom_attribute('points');
-var $elm$svg$Svg$polygon = $elm$svg$Svg$trustedNode('polygon');
-var $elm$core$Basics$cos = _Basics_cos;
-var $elm$core$Basics$sin = _Basics_sin;
-var $elm$core$Basics$pi = _Basics_pi;
-var $elm$core$Basics$turns = function (angleInTurns) {
-	return (2 * $elm$core$Basics$pi) * angleInTurns;
-};
-var $evancz$elm_playground$Playground$toNgonPoints = F4(
-	function (i, n, radius, string) {
-		toNgonPoints:
-		while (true) {
-			if (_Utils_eq(i, n)) {
-				return string;
-			} else {
-				var a = $elm$core$Basics$turns((i / n) - 0.25);
-				var x = radius * $elm$core$Basics$cos(a);
-				var y = radius * $elm$core$Basics$sin(a);
-				var $temp$i = i + 1,
-					$temp$n = n,
-					$temp$radius = radius,
-					$temp$string = string + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(y) + ' ')));
-				i = $temp$i;
-				n = $temp$n;
-				radius = $temp$radius;
-				string = $temp$string;
-				continue toNgonPoints;
-			}
-		}
-	});
-var $evancz$elm_playground$Playground$renderNgon = F8(
-	function (color, n, radius, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$polygon,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$points(
-					A4($evancz$elm_playground$Playground$toNgonPoints, 0, n, radius, '')),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$fill(
-						$evancz$elm_playground$Playground$renderColor(color)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$transform(
-							A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-						$evancz$elm_playground$Playground$renderAlpha(alpha)))),
-			_List_Nil);
-	});
-var $elm$svg$Svg$ellipse = $elm$svg$Svg$trustedNode('ellipse');
-var $elm$svg$Svg$Attributes$rx = _VirtualDom_attribute('rx');
-var $elm$svg$Svg$Attributes$ry = _VirtualDom_attribute('ry');
-var $evancz$elm_playground$Playground$renderOval = F8(
-	function (color, width, height, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$ellipse,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$rx(
-					$elm$core$String$fromFloat(width / 2)),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$ry(
-						$elm$core$String$fromFloat(height / 2)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$fill(
-							$evancz$elm_playground$Playground$renderColor(color)),
-						A2(
-							$elm$core$List$cons,
-							$elm$svg$Svg$Attributes$transform(
-								A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-							$evancz$elm_playground$Playground$renderAlpha(alpha))))),
-			_List_Nil);
-	});
-var $evancz$elm_playground$Playground$addPoint = F2(
-	function (_v0, str) {
-		var x = _v0.a;
-		var y = _v0.b;
-		return str + ($elm$core$String$fromFloat(x) + (',' + ($elm$core$String$fromFloat(-y) + ' ')));
-	});
-var $evancz$elm_playground$Playground$renderPolygon = F7(
-	function (color, coordinates, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$polygon,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$points(
-					A3($elm$core$List$foldl, $evancz$elm_playground$Playground$addPoint, '', coordinates)),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$fill(
-						$evancz$elm_playground$Playground$renderColor(color)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$transform(
-							A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-						$evancz$elm_playground$Playground$renderAlpha(alpha)))),
-			_List_Nil);
-	});
-var $elm$svg$Svg$rect = $elm$svg$Svg$trustedNode('rect');
-var $evancz$elm_playground$Playground$renderRectangle = F8(
-	function (color, w, h, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$rect,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$width(
-					$elm$core$String$fromFloat(w)),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$height(
-						$elm$core$String$fromFloat(h)),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$fill(
-							$evancz$elm_playground$Playground$renderColor(color)),
-						A2(
-							$elm$core$List$cons,
-							$elm$svg$Svg$Attributes$transform(
-								A6($evancz$elm_playground$Playground$renderRectTransform, w, h, x, y, angle, s)),
-							$evancz$elm_playground$Playground$renderAlpha(alpha))))),
-			_List_Nil);
-	});
-var $elm$svg$Svg$Attributes$dominantBaseline = _VirtualDom_attribute('dominant-baseline');
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
-var $elm$svg$Svg$text = $elm$virtual_dom$VirtualDom$text;
-var $elm$svg$Svg$Attributes$textAnchor = _VirtualDom_attribute('text-anchor');
-var $elm$svg$Svg$text_ = $elm$svg$Svg$trustedNode('text');
-var $evancz$elm_playground$Playground$renderWords = F7(
-	function (color, string, x, y, angle, s, alpha) {
-		return A2(
-			$elm$svg$Svg$text_,
-			A2(
-				$elm$core$List$cons,
-				$elm$svg$Svg$Attributes$textAnchor('middle'),
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$dominantBaseline('central'),
-					A2(
-						$elm$core$List$cons,
-						$elm$svg$Svg$Attributes$fill(
-							$evancz$elm_playground$Playground$renderColor(color)),
-						A2(
-							$elm$core$List$cons,
-							$elm$svg$Svg$Attributes$transform(
-								A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-							$evancz$elm_playground$Playground$renderAlpha(alpha))))),
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn = F2(
+	function (name, args) {
+		return $elm$json$Json$Encode$object(
 			_List_fromArray(
 				[
-					$elm$svg$Svg$text(string)
+					_Utils_Tuple2(
+					'type',
+					$elm$json$Json$Encode$string('function')),
+					_Utils_Tuple2(
+					'name',
+					$elm$json$Json$Encode$string(name)),
+					_Utils_Tuple2(
+					'args',
+					A2($elm$json$Json$Encode$list, $elm$core$Basics$identity, args))
 				]));
 	});
-var $evancz$elm_playground$Playground$renderShape = function (_v0) {
-	var x = _v0.a;
-	var y = _v0.b;
-	var angle = _v0.c;
-	var s = _v0.d;
-	var alpha = _v0.e;
-	var form = _v0.f;
-	switch (form.$) {
-		case 'Circle':
-			var color = form.a;
-			var radius = form.b;
-			return A7($evancz$elm_playground$Playground$renderCircle, color, radius, x, y, angle, s, alpha);
-		case 'Oval':
-			var color = form.a;
-			var width = form.b;
-			var height = form.c;
-			return A8($evancz$elm_playground$Playground$renderOval, color, width, height, x, y, angle, s, alpha);
-		case 'Rectangle':
-			var color = form.a;
-			var width = form.b;
-			var height = form.c;
-			return A8($evancz$elm_playground$Playground$renderRectangle, color, width, height, x, y, angle, s, alpha);
-		case 'Ngon':
-			var color = form.a;
-			var n = form.b;
-			var radius = form.c;
-			return A8($evancz$elm_playground$Playground$renderNgon, color, n, radius, x, y, angle, s, alpha);
-		case 'Polygon':
-			var color = form.a;
-			var points = form.b;
-			return A7($evancz$elm_playground$Playground$renderPolygon, color, points, x, y, angle, s, alpha);
-		case 'Image':
-			var width = form.a;
-			var height = form.b;
-			var src = form.c;
-			return A8($evancz$elm_playground$Playground$renderImage, width, height, src, x, y, angle, s, alpha);
-		case 'Words':
-			var color = form.a;
-			var string = form.b;
-			return A7($evancz$elm_playground$Playground$renderWords, color, string, x, y, angle, s, alpha);
-		default:
-			var shapes = form.a;
-			return A2(
-				$elm$svg$Svg$g,
-				A2(
-					$elm$core$List$cons,
-					$elm$svg$Svg$Attributes$transform(
-						A4($evancz$elm_playground$Playground$renderTransform, x, y, angle, s)),
-					$evancz$elm_playground$Playground$renderAlpha(alpha)),
-				A2($elm$core$List$map, $evancz$elm_playground$Playground$renderShape, shapes));
-	}
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$rotate = function (angle) {
+	return A2(
+		$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+		'rotate',
+		_List_fromArray(
+			[
+				$elm$json$Json$Encode$float(angle)
+			]));
+};
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$scale = F2(
+	function (x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'scale',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$transform = F6(
+	function (a, b, c, d, e, f) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'transform',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(a),
+					$elm$json$Json$Encode$float(b),
+					$elm$json$Json$Encode$float(c),
+					$elm$json$Json$Encode$float(d),
+					$elm$json$Json$Encode$float(e),
+					$elm$json$Json$Encode$float(f)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$translate = F2(
+	function (x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'translate',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Settings$Advanced$transform = function (transforms) {
+	return $joakin$elm_canvas$Canvas$Internal$Canvas$SettingCommands(
+		A2(
+			$elm$core$List$map,
+			function (t) {
+				switch (t.$) {
+					case 'Rotate':
+						var angle = t.a;
+						return $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$rotate(angle);
+					case 'Scale':
+						var x = t.a;
+						var y = t.b;
+						return A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$scale, x, y);
+					case 'Translate':
+						var x = t.a;
+						var y = t.b;
+						return A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$translate, x, y);
+					default:
+						var m11 = t.a.m11;
+						var m12 = t.a.m12;
+						var m21 = t.a.m21;
+						var m22 = t.a.m22;
+						var dx = t.a.dx;
+						var dy = t.a.dy;
+						return A6($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$transform, m11, m12, m21, m22, dx, dy);
+				}
+			},
+			transforms));
+};
+var $joakin$elm_canvas$Canvas$Settings$Advanced$Translate = F2(
+	function (a, b) {
+		return {$: 'Translate', a: a, b: b};
+	});
+var $joakin$elm_canvas$Canvas$Settings$Advanced$translate = $joakin$elm_canvas$Canvas$Settings$Advanced$Translate;
+var $author$project$Main$render = function (count) {
+	var size = $author$project$Main$width / 3;
+	var x = -(size / 2);
+	var y = -(size / 2);
+	var rotation = $elm$core$Basics$degrees(count * 3);
+	var hue = A2(
+		$elm$core$Basics$modBy,
+		100,
+		$elm$core$Basics$floor(count / 4)) / 100;
+	return A2(
+		$joakin$elm_canvas$Canvas$shapes,
+		_List_fromArray(
+			[
+				$joakin$elm_canvas$Canvas$Settings$Advanced$transform(
+				_List_fromArray(
+					[
+						A2($joakin$elm_canvas$Canvas$Settings$Advanced$translate, $author$project$Main$centerX, $author$project$Main$centerY),
+						$joakin$elm_canvas$Canvas$Settings$Advanced$rotate(rotation)
+					])),
+				$joakin$elm_canvas$Canvas$Settings$fill(
+				A3($avh4$elm_color$Color$hsl, hue, 0.3, 0.7))
+			]),
+		_List_fromArray(
+			[
+				A3(
+				$joakin$elm_canvas$Canvas$rect,
+				_Utils_Tuple2(x, y),
+				size,
+				size)
+			]));
 };
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
-var $elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
-var $evancz$elm_playground$Playground$render = F2(
-	function (screen, shapes) {
-		var y = $elm$core$String$fromFloat(screen.bottom);
-		var x = $elm$core$String$fromFloat(screen.left);
-		var w = $elm$core$String$fromFloat(screen.width);
-		var h = $elm$core$String$fromFloat(screen.height);
+var $elm$html$Html$canvas = _VirtualDom_node('canvas');
+var $joakin$elm_canvas$Canvas$cnvs = A2($elm$html$Html$canvas, _List_Nil, _List_Nil);
+var $elm$virtual_dom$VirtualDom$property = F2(
+	function (key, value) {
 		return A2(
-			$elm$svg$Svg$svg,
+			_VirtualDom_property,
+			_VirtualDom_noInnerHtmlOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlJson(value));
+	});
+var $elm$html$Html$Attributes$property = $elm$virtual_dom$VirtualDom$property;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$commands = function (list) {
+	return A2(
+		$elm$html$Html$Attributes$property,
+		'cmds',
+		A2($elm$json$Json$Encode$list, $elm$core$Basics$identity, list));
+};
+var $elm$html$Html$Attributes$height = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
+};
+var $elm$virtual_dom$VirtualDom$keyedNode = function (tag) {
+	return _VirtualDom_keyedNode(
+		_VirtualDom_noScript(tag));
+};
+var $elm$html$Html$Keyed$node = $elm$virtual_dom$VirtualDom$keyedNode;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$empty = _List_Nil;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$beginPath = A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn, 'beginPath', _List_Nil);
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$field = F2(
+	function (name, value) {
+		return $elm$json$Json$Encode$object(
 			_List_fromArray(
 				[
-					$elm$svg$Svg$Attributes$viewBox(x + (' ' + (y + (' ' + (w + (' ' + h)))))),
-					A2($elm$html$Html$Attributes$style, 'position', 'fixed'),
-					A2($elm$html$Html$Attributes$style, 'top', '0'),
-					A2($elm$html$Html$Attributes$style, 'left', '0'),
-					$elm$svg$Svg$Attributes$width('100%'),
-					$elm$svg$Svg$Attributes$height('100%')
-				]),
-			A2($elm$core$List$map, $evancz$elm_playground$Playground$renderShape, shapes));
+					_Utils_Tuple2(
+					'type',
+					$elm$json$Json$Encode$string('field')),
+					_Utils_Tuple2(
+					'name',
+					$elm$json$Json$Encode$string(name)),
+					_Utils_Tuple2('value', value)
+				]));
 	});
-var $evancz$elm_playground$Playground$game = F3(
-	function (viewMemory, updateMemory, initialMemory) {
-		var view = function (_v3) {
-			var memory = _v3.b;
-			var computer = _v3.c;
-			return {
-				body: _List_fromArray(
-					[
+var $elm$core$String$concat = function (strings) {
+	return A2($elm$core$String$join, '', strings);
+};
+var $elm$core$String$fromFloat = _String_fromNumber;
+var $elm$core$Basics$round = _Basics_round;
+var $avh4$elm_color$Color$toCssString = function (_v0) {
+	var r = _v0.a;
+	var g = _v0.b;
+	var b = _v0.c;
+	var a = _v0.d;
+	var roundTo = function (x) {
+		return $elm$core$Basics$round(x * 1000) / 1000;
+	};
+	var pct = function (x) {
+		return $elm$core$Basics$round(x * 10000) / 100;
+	};
+	return $elm$core$String$concat(
+		_List_fromArray(
+			[
+				'rgba(',
+				$elm$core$String$fromFloat(
+				pct(r)),
+				'%,',
+				$elm$core$String$fromFloat(
+				pct(g)),
+				'%,',
+				$elm$core$String$fromFloat(
+				pct(b)),
+				'%,',
+				$elm$core$String$fromFloat(
+				roundTo(a)),
+				')'
+			]));
+};
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillStyle = function (color) {
+	return A2(
+		$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$field,
+		'fillStyle',
+		$elm$json$Json$Encode$string(
+			$avh4$elm_color$Color$toCssString(color)));
+};
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$clearRect = F4(
+	function (x, y, width, height) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'clearRect',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y),
+					$elm$json$Json$Encode$float(width),
+					$elm$json$Json$Encode$float(height)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$renderClear = F4(
+	function (_v0, w, h, cmds) {
+		var x = _v0.a;
+		var y = _v0.b;
+		return A2(
+			$elm$core$List$cons,
+			A4($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$clearRect, x, y, w, h),
+			cmds);
+	});
+var $elm$json$Json$Encode$bool = _Json_wrap;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$arc = F6(
+	function (x, y, radius, startAngle, endAngle, anticlockwise) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'arc',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y),
+					$elm$json$Json$Encode$float(radius),
+					$elm$json$Json$Encode$float(startAngle),
+					$elm$json$Json$Encode$float(endAngle),
+					$elm$json$Json$Encode$bool(anticlockwise)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$circle = F3(
+	function (x, y, r) {
+		return A6($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$arc, x, y, r, 0, 2 * $elm$core$Basics$pi, false);
+	});
+var $elm$core$Basics$cos = _Basics_cos;
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo = F2(
+	function (x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'moveTo',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$rect = F4(
+	function (x, y, w, h) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'rect',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y),
+					$elm$json$Json$Encode$float(w),
+					$elm$json$Json$Encode$float(h)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$arcTo = F5(
+	function (x1, y1, x2, y2, radius) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'arcTo',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x1),
+					$elm$json$Json$Encode$float(y1),
+					$elm$json$Json$Encode$float(x2),
+					$elm$json$Json$Encode$float(y2),
+					$elm$json$Json$Encode$float(radius)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$bezierCurveTo = F6(
+	function (cp1x, cp1y, cp2x, cp2y, x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'bezierCurveTo',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(cp1x),
+					$elm$json$Json$Encode$float(cp1y),
+					$elm$json$Json$Encode$float(cp2x),
+					$elm$json$Json$Encode$float(cp2y),
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$lineTo = F2(
+	function (x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'lineTo',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$quadraticCurveTo = F4(
+	function (cpx, cpy, x, y) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'quadraticCurveTo',
+			_List_fromArray(
+				[
+					$elm$json$Json$Encode$float(cpx),
+					$elm$json$Json$Encode$float(cpy),
+					$elm$json$Json$Encode$float(x),
+					$elm$json$Json$Encode$float(y)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$renderLineSegment = F2(
+	function (segment, cmds) {
+		switch (segment.$) {
+			case 'ArcTo':
+				var _v1 = segment.a;
+				var x = _v1.a;
+				var y = _v1.b;
+				var _v2 = segment.b;
+				var x2 = _v2.a;
+				var y2 = _v2.b;
+				var radius = segment.c;
+				return A2(
+					$elm$core$List$cons,
+					A5($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$arcTo, x, y, x2, y2, radius),
+					cmds);
+			case 'BezierCurveTo':
+				var _v3 = segment.a;
+				var cp1x = _v3.a;
+				var cp1y = _v3.b;
+				var _v4 = segment.b;
+				var cp2x = _v4.a;
+				var cp2y = _v4.b;
+				var _v5 = segment.c;
+				var x = _v5.a;
+				var y = _v5.b;
+				return A2(
+					$elm$core$List$cons,
+					A6($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$bezierCurveTo, cp1x, cp1y, cp2x, cp2y, x, y),
+					cmds);
+			case 'LineTo':
+				var _v6 = segment.a;
+				var x = _v6.a;
+				var y = _v6.b;
+				return A2(
+					$elm$core$List$cons,
+					A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$lineTo, x, y),
+					cmds);
+			case 'MoveTo':
+				var _v7 = segment.a;
+				var x = _v7.a;
+				var y = _v7.b;
+				return A2(
+					$elm$core$List$cons,
+					A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo, x, y),
+					cmds);
+			default:
+				var _v8 = segment.a;
+				var cpx = _v8.a;
+				var cpy = _v8.b;
+				var _v9 = segment.b;
+				var x = _v9.a;
+				var y = _v9.b;
+				return A2(
+					$elm$core$List$cons,
+					A4($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$quadraticCurveTo, cpx, cpy, x, y),
+					cmds);
+		}
+	});
+var $elm$core$Basics$sin = _Basics_sin;
+var $joakin$elm_canvas$Canvas$renderShape = F2(
+	function (shape, cmds) {
+		switch (shape.$) {
+			case 'Rect':
+				var _v1 = shape.a;
+				var x = _v1.a;
+				var y = _v1.b;
+				var w = shape.b;
+				var h = shape.c;
+				return A2(
+					$elm$core$List$cons,
+					A4($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$rect, x, y, w, h),
+					A2(
+						$elm$core$List$cons,
+						A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo, x, y),
+						cmds));
+			case 'Circle':
+				var _v2 = shape.a;
+				var x = _v2.a;
+				var y = _v2.b;
+				var r = shape.b;
+				return A2(
+					$elm$core$List$cons,
+					A3($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$circle, x, y, r),
+					A2(
+						$elm$core$List$cons,
+						A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo, x + r, y),
+						cmds));
+			case 'Path':
+				var _v3 = shape.a;
+				var x = _v3.a;
+				var y = _v3.b;
+				var segments = shape.b;
+				return A3(
+					$elm$core$List$foldl,
+					$joakin$elm_canvas$Canvas$renderLineSegment,
+					A2(
+						$elm$core$List$cons,
+						A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo, x, y),
+						cmds),
+					segments);
+			default:
+				var _v4 = shape.a;
+				var x = _v4.a;
+				var y = _v4.b;
+				var radius = shape.b;
+				var startAngle = shape.c;
+				var endAngle = shape.d;
+				var anticlockwise = shape.e;
+				return A2(
+					$elm$core$List$cons,
+					A2(
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo,
+						x + (radius * $elm$core$Basics$cos(endAngle)),
+						y + (radius * $elm$core$Basics$sin(endAngle))),
+					A2(
+						$elm$core$List$cons,
+						A6($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$arc, x, y, radius, startAngle, endAngle, anticlockwise),
 						A2(
-						$evancz$elm_playground$Playground$render,
-						computer.screen,
-						A2(viewMemory, computer, memory))
-					]),
-				title: 'Playground'
-			};
-		};
-		var update = F2(
-			function (msg, model) {
-				return _Utils_Tuple2(
-					A3($evancz$elm_playground$Playground$gameUpdate, updateMemory, msg, model),
-					$elm$core$Platform$Cmd$none);
-			});
-		var subscriptions = function (_v2) {
-			var visibility = _v2.a;
-			if (visibility.$ === 'Hidden') {
-				return $elm$browser$Browser$Events$onVisibilityChange($evancz$elm_playground$Playground$VisibilityChanged);
-			} else {
-				return $evancz$elm_playground$Playground$gameSubscriptions;
+							$elm$core$List$cons,
+							A2(
+								$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$moveTo,
+								x + (radius * $elm$core$Basics$cos(startAngle)),
+								y + (radius * $elm$core$Basics$sin(startAngle))),
+							cmds)));
+		}
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$NonZero = {$: 'NonZero'};
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillRuleToString = function (fillRule) {
+	if (fillRule.$ === 'NonZero') {
+		return 'nonzero';
+	} else {
+		return 'evenodd';
+	}
+};
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fill = function (fillRule) {
+	return A2(
+		$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+		'fill',
+		_List_fromArray(
+			[
+				$elm$json$Json$Encode$string(
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillRuleToString(fillRule))
+			]));
+};
+var $joakin$elm_canvas$Canvas$renderShapeFill = F2(
+	function (maybeColor, cmds) {
+		return A2(
+			$elm$core$List$cons,
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fill($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$NonZero),
+			function () {
+				if (maybeColor.$ === 'Just') {
+					var color = maybeColor.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillStyle(color),
+						cmds);
+				} else {
+					return cmds;
+				}
+			}());
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$stroke = A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn, 'stroke', _List_Nil);
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeStyle = function (color) {
+	return A2(
+		$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$field,
+		'strokeStyle',
+		$elm$json$Json$Encode$string(
+			$avh4$elm_color$Color$toCssString(color)));
+};
+var $joakin$elm_canvas$Canvas$renderShapeStroke = F2(
+	function (maybeColor, cmds) {
+		return A2(
+			$elm$core$List$cons,
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$stroke,
+			function () {
+				if (maybeColor.$ === 'Just') {
+					var color = maybeColor.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeStyle(color),
+						cmds);
+				} else {
+					return cmds;
+				}
+			}());
+	});
+var $joakin$elm_canvas$Canvas$renderShapeDrawOp = F2(
+	function (drawOp, cmds) {
+		switch (drawOp.$) {
+			case 'NotSpecified':
+				return A2(
+					$joakin$elm_canvas$Canvas$renderShapeStroke,
+					$elm$core$Maybe$Nothing,
+					A2($joakin$elm_canvas$Canvas$renderShapeFill, $elm$core$Maybe$Nothing, cmds));
+			case 'Fill':
+				var c = drawOp.a;
+				return A2(
+					$joakin$elm_canvas$Canvas$renderShapeFill,
+					$elm$core$Maybe$Just(c),
+					cmds);
+			case 'Stroke':
+				var c = drawOp.a;
+				return A2(
+					$joakin$elm_canvas$Canvas$renderShapeStroke,
+					$elm$core$Maybe$Just(c),
+					cmds);
+			default:
+				var fc = drawOp.a;
+				var sc = drawOp.b;
+				return A2(
+					$joakin$elm_canvas$Canvas$renderShapeStroke,
+					$elm$core$Maybe$Just(sc),
+					A2(
+						$joakin$elm_canvas$Canvas$renderShapeFill,
+						$elm$core$Maybe$Just(fc),
+						cmds));
+		}
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillText = F4(
+	function (text, x, y, maybeMaxWidth) {
+		if (maybeMaxWidth.$ === 'Nothing') {
+			return A2(
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+				'fillText',
+				_List_fromArray(
+					[
+						$elm$json$Json$Encode$string(text),
+						$elm$json$Json$Encode$float(x),
+						$elm$json$Json$Encode$float(y)
+					]));
+		} else {
+			var maxWidth = maybeMaxWidth.a;
+			return A2(
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+				'fillText',
+				_List_fromArray(
+					[
+						$elm$json$Json$Encode$string(text),
+						$elm$json$Json$Encode$float(x),
+						$elm$json$Json$Encode$float(y),
+						$elm$json$Json$Encode$float(maxWidth)
+					]));
+		}
+	});
+var $joakin$elm_canvas$Canvas$renderTextFill = F5(
+	function (txt, x, y, maybeColor, cmds) {
+		return A2(
+			$elm$core$List$cons,
+			A4($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillText, txt.text, x, y, txt.maxWidth),
+			function () {
+				if (maybeColor.$ === 'Just') {
+					var color = maybeColor.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillStyle(color),
+						cmds);
+				} else {
+					return cmds;
+				}
+			}());
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeText = F4(
+	function (text, x, y, maybeMaxWidth) {
+		if (maybeMaxWidth.$ === 'Nothing') {
+			return A2(
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+				'strokeText',
+				_List_fromArray(
+					[
+						$elm$json$Json$Encode$string(text),
+						$elm$json$Json$Encode$float(x),
+						$elm$json$Json$Encode$float(y)
+					]));
+		} else {
+			var maxWidth = maybeMaxWidth.a;
+			return A2(
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+				'strokeText',
+				_List_fromArray(
+					[
+						$elm$json$Json$Encode$string(text),
+						$elm$json$Json$Encode$float(x),
+						$elm$json$Json$Encode$float(y),
+						$elm$json$Json$Encode$float(maxWidth)
+					]));
+		}
+	});
+var $joakin$elm_canvas$Canvas$renderTextStroke = F5(
+	function (txt, x, y, maybeColor, cmds) {
+		return A2(
+			$elm$core$List$cons,
+			A4($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeText, txt.text, x, y, txt.maxWidth),
+			function () {
+				if (maybeColor.$ === 'Just') {
+					var color = maybeColor.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeStyle(color),
+						cmds);
+				} else {
+					return cmds;
+				}
+			}());
+	});
+var $joakin$elm_canvas$Canvas$renderTextDrawOp = F3(
+	function (drawOp, txt, cmds) {
+		var _v0 = txt.point;
+		var x = _v0.a;
+		var y = _v0.b;
+		switch (drawOp.$) {
+			case 'NotSpecified':
+				return A5(
+					$joakin$elm_canvas$Canvas$renderTextStroke,
+					txt,
+					x,
+					y,
+					$elm$core$Maybe$Nothing,
+					A5($joakin$elm_canvas$Canvas$renderTextFill, txt, x, y, $elm$core$Maybe$Nothing, cmds));
+			case 'Fill':
+				var c = drawOp.a;
+				return A5(
+					$joakin$elm_canvas$Canvas$renderTextFill,
+					txt,
+					x,
+					y,
+					$elm$core$Maybe$Just(c),
+					cmds);
+			case 'Stroke':
+				var c = drawOp.a;
+				return A5(
+					$joakin$elm_canvas$Canvas$renderTextStroke,
+					txt,
+					x,
+					y,
+					$elm$core$Maybe$Just(c),
+					cmds);
+			default:
+				var fc = drawOp.a;
+				var sc = drawOp.b;
+				return A5(
+					$joakin$elm_canvas$Canvas$renderTextStroke,
+					txt,
+					x,
+					y,
+					$elm$core$Maybe$Just(sc),
+					A5(
+						$joakin$elm_canvas$Canvas$renderTextFill,
+						txt,
+						x,
+						y,
+						$elm$core$Maybe$Just(fc),
+						cmds));
+		}
+	});
+var $joakin$elm_canvas$Canvas$renderText = F3(
+	function (drawOp, txt, cmds) {
+		return A3($joakin$elm_canvas$Canvas$renderTextDrawOp, drawOp, txt, cmds);
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$drawImage = F9(
+	function (sx, sy, sw, sh, dx, dy, dw, dh, imageObj) {
+		return A2(
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn,
+			'drawImage',
+			_List_fromArray(
+				[
+					imageObj,
+					$elm$json$Json$Encode$float(sx),
+					$elm$json$Json$Encode$float(sy),
+					$elm$json$Json$Encode$float(sw),
+					$elm$json$Json$Encode$float(sh),
+					$elm$json$Json$Encode$float(dx),
+					$elm$json$Json$Encode$float(dy),
+					$elm$json$Json$Encode$float(dw),
+					$elm$json$Json$Encode$float(dh)
+				]));
+	});
+var $joakin$elm_canvas$Canvas$Internal$Texture$drawTexture = F4(
+	function (x, y, t, cmds) {
+		return A2(
+			$elm$core$List$cons,
+			function () {
+				if (t.$ === 'TImage') {
+					var image = t.a;
+					return A9($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$drawImage, 0, 0, image.width, image.height, x, y, image.width, image.height, image.json);
+				} else {
+					var sprite = t.a;
+					var image = t.b;
+					return A9($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$drawImage, sprite.x, sprite.y, sprite.width, sprite.height, x, y, sprite.width, sprite.height, image.json);
+				}
+			}(),
+			cmds);
+	});
+var $joakin$elm_canvas$Canvas$renderTexture = F3(
+	function (_v0, t, cmds) {
+		var x = _v0.a;
+		var y = _v0.b;
+		return A4($joakin$elm_canvas$Canvas$Internal$Texture$drawTexture, x, y, t, cmds);
+	});
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$restore = A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn, 'restore', _List_Nil);
+var $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$save = A2($joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fn, 'save', _List_Nil);
+var $joakin$elm_canvas$Canvas$renderDrawable = F3(
+	function (drawable, drawOp, cmds) {
+		switch (drawable.$) {
+			case 'DrawableText':
+				var txt = drawable.a;
+				return A3($joakin$elm_canvas$Canvas$renderText, drawOp, txt, cmds);
+			case 'DrawableShapes':
+				var ss = drawable.a;
+				return A2(
+					$joakin$elm_canvas$Canvas$renderShapeDrawOp,
+					drawOp,
+					A3(
+						$elm$core$List$foldl,
+						$joakin$elm_canvas$Canvas$renderShape,
+						A2($elm$core$List$cons, $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$beginPath, cmds),
+						ss));
+			case 'DrawableTexture':
+				var p = drawable.a;
+				var t = drawable.b;
+				return A3($joakin$elm_canvas$Canvas$renderTexture, p, t, cmds);
+			case 'DrawableClear':
+				var p = drawable.a;
+				var w = drawable.b;
+				var h = drawable.c;
+				return A4($joakin$elm_canvas$Canvas$renderClear, p, w, h, cmds);
+			default:
+				var renderables = drawable.a;
+				return A3($joakin$elm_canvas$Canvas$renderGroup, drawOp, renderables, cmds);
+		}
+	});
+var $joakin$elm_canvas$Canvas$renderGroup = F3(
+	function (drawOp, renderables, cmds) {
+		var cmdsWithDraw = function () {
+			switch (drawOp.$) {
+				case 'NotSpecified':
+					return cmds;
+				case 'Fill':
+					var c = drawOp.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillStyle(c),
+						cmds);
+				case 'Stroke':
+					var c = drawOp.a;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeStyle(c),
+						cmds);
+				default:
+					var fc = drawOp.a;
+					var sc = drawOp.b;
+					return A2(
+						$elm$core$List$cons,
+						$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$fillStyle(fc),
+						A2(
+							$elm$core$List$cons,
+							$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$strokeStyle(sc),
+							cmds));
 			}
-		};
-		var init = function (_v0) {
-			return _Utils_Tuple2(
-				A3($evancz$elm_playground$Playground$Game, $elm$browser$Browser$Events$Visible, initialMemory, $evancz$elm_playground$Playground$initialComputer),
-				A2($elm$core$Task$perform, $evancz$elm_playground$Playground$GotViewport, $elm$browser$Browser$Dom$getViewport));
-		};
-		return $elm$browser$Browser$document(
-			{init: init, subscriptions: subscriptions, update: update, view: view});
+		}();
+		return A3(
+			$elm$core$List$foldl,
+			$joakin$elm_canvas$Canvas$renderOne(drawOp),
+			cmdsWithDraw,
+			renderables);
 	});
-var $evancz$elm_playground$Playground$toX = function (keyboard) {
-	return (keyboard.right ? 1 : 0) - (keyboard.left ? 1 : 0);
+var $joakin$elm_canvas$Canvas$renderOne = F3(
+	function (parentDrawOp, _v0, cmds) {
+		var commands = _v0.a.commands;
+		var drawable = _v0.a.drawable;
+		var drawOp = _v0.a.drawOp;
+		return A2(
+			$elm$core$List$cons,
+			$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$restore,
+			A3(
+				$joakin$elm_canvas$Canvas$renderDrawable,
+				drawable,
+				A2($joakin$elm_canvas$Canvas$mergeDrawOp, parentDrawOp, drawOp),
+				_Utils_ap(
+					commands,
+					A2($elm$core$List$cons, $joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$save, cmds))));
+	});
+var $joakin$elm_canvas$Canvas$render = function (entities) {
+	return A3(
+		$elm$core$List$foldl,
+		$joakin$elm_canvas$Canvas$renderOne($joakin$elm_canvas$Canvas$Internal$Canvas$NotSpecified),
+		$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$empty,
+		entities);
 };
-var $evancz$elm_playground$Playground$toY = function (keyboard) {
-	return (keyboard.up ? 1 : 0) - (keyboard.down ? 1 : 0);
+var $elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var $elm$html$Html$Attributes$attribute = $elm$virtual_dom$VirtualDom$attribute;
+var $joakin$elm_canvas$Canvas$Internal$Texture$TImage = function (a) {
+	return {$: 'TImage', a: a};
 };
-var $author$project$Main$update = F2(
-	function (computer, _v0) {
-		var x = _v0.a;
-		var y = _v0.b;
-		return _Utils_Tuple2(
-			x + $evancz$elm_playground$Playground$toX(computer.keyboard),
-			y + $evancz$elm_playground$Playground$toY(computer.keyboard));
-	});
-var $evancz$elm_playground$Playground$Hex = function (a) {
-	return {$: 'Hex', a: a};
+var $elm$json$Json$Decode$andThen = _Json_andThen;
+var $elm$json$Json$Decode$field = _Json_decodeField;
+var $elm$json$Json$Decode$float = _Json_decodeFloat;
+var $elm$json$Json$Decode$map3 = _Json_map3;
+var $elm$json$Json$Decode$string = _Json_decodeString;
+var $elm$json$Json$Decode$value = _Json_decodeValue;
+var $joakin$elm_canvas$Canvas$Internal$Texture$decodeTextureImage = A2(
+	$elm$json$Json$Decode$andThen,
+	function (image) {
+		return A4(
+			$elm$json$Json$Decode$map3,
+			F3(
+				function (tagName, width, height) {
+					return (tagName === 'IMG') ? $elm$core$Maybe$Just(
+						$joakin$elm_canvas$Canvas$Internal$Texture$TImage(
+							{height: height, json: image, width: width})) : $elm$core$Maybe$Nothing;
+				}),
+			A2($elm$json$Json$Decode$field, 'tagName', $elm$json$Json$Decode$string),
+			A2($elm$json$Json$Decode$field, 'width', $elm$json$Json$Decode$float),
+			A2($elm$json$Json$Decode$field, 'height', $elm$json$Json$Decode$float));
+	},
+	$elm$json$Json$Decode$value);
+var $joakin$elm_canvas$Canvas$Internal$Texture$decodeImageLoadEvent = A2($elm$json$Json$Decode$field, 'target', $joakin$elm_canvas$Canvas$Internal$Texture$decodeTextureImage);
+var $elm$html$Html$img = _VirtualDom_node('img');
+var $elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 'Normal', a: a};
 };
-var $evancz$elm_playground$Playground$blue = $evancz$elm_playground$Playground$Hex('#3465a4');
-var $evancz$elm_playground$Playground$Shape = F6(
-	function (a, b, c, d, e, f) {
-		return {$: 'Shape', a: a, b: b, c: c, d: d, e: e, f: f};
+var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var $elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$Normal(decoder));
 	});
-var $evancz$elm_playground$Playground$move = F3(
-	function (dx, dy, _v0) {
-		var x = _v0.a;
-		var y = _v0.b;
-		var a = _v0.c;
-		var s = _v0.d;
-		var o = _v0.e;
-		var f = _v0.f;
-		return A6($evancz$elm_playground$Playground$Shape, x + dx, y + dy, a, s, o, f);
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
 	});
-var $evancz$elm_playground$Playground$Rectangle = F3(
-	function (a, b, c) {
-		return {$: 'Rectangle', a: a, b: b, c: c};
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var $joakin$elm_canvas$Canvas$renderTextureSource = function (textureSource) {
+	var url = textureSource.a;
+	var onLoad = textureSource.b;
+	return _Utils_Tuple2(
+		url,
+		A2(
+			$elm$html$Html$img,
+			_List_fromArray(
+				[
+					$elm$html$Html$Attributes$src(url),
+					A2($elm$html$Html$Attributes$attribute, 'crossorigin', 'anonymous'),
+					A2($elm$html$Html$Attributes$style, 'display', 'none'),
+					A2(
+					$elm$html$Html$Events$on,
+					'load',
+					A2($elm$json$Json$Decode$map, onLoad, $joakin$elm_canvas$Canvas$Internal$Texture$decodeImageLoadEvent)),
+					A2(
+					$elm$html$Html$Events$on,
+					'error',
+					$elm$json$Json$Decode$succeed(
+						onLoad($elm$core$Maybe$Nothing)))
+				]),
+			_List_Nil));
+};
+var $elm$html$Html$Attributes$width = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'width',
+		$elm$core$String$fromInt(n));
+};
+var $joakin$elm_canvas$Canvas$toHtmlWith = F3(
+	function (options, attrs, entities) {
+		return A3(
+			$elm$html$Html$Keyed$node,
+			'elm-canvas',
+			A2(
+				$elm$core$List$cons,
+				$joakin$elm_canvas$Canvas$Internal$CustomElementJsonApi$commands(
+					$joakin$elm_canvas$Canvas$render(entities)),
+				A2(
+					$elm$core$List$cons,
+					$elm$html$Html$Attributes$height(options.height),
+					A2(
+						$elm$core$List$cons,
+						$elm$html$Html$Attributes$width(options.width),
+						attrs))),
+			A2(
+				$elm$core$List$cons,
+				_Utils_Tuple2('__canvas', $joakin$elm_canvas$Canvas$cnvs),
+				A2($elm$core$List$map, $joakin$elm_canvas$Canvas$renderTextureSource, options.textures)));
 	});
-var $evancz$elm_playground$Playground$square = F2(
-	function (color, n) {
-		return A6(
-			$evancz$elm_playground$Playground$Shape,
-			0,
-			0,
-			0,
-			1,
-			1,
-			A3($evancz$elm_playground$Playground$Rectangle, color, n, n));
+var $joakin$elm_canvas$Canvas$toHtml = F3(
+	function (_v0, attrs, entities) {
+		var w = _v0.a;
+		var h = _v0.b;
+		return A3(
+			$joakin$elm_canvas$Canvas$toHtmlWith,
+			{height: h, textures: _List_Nil, width: w},
+			attrs,
+			entities);
 	});
-var $author$project$Main$view = F2(
-	function (computer, _v0) {
-		var x = _v0.a;
-		var y = _v0.b;
-		return _List_fromArray(
+var $author$project$Main$view = function (_v0) {
+	var count = _v0.count;
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+				A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
+				A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+			]),
+		_List_fromArray(
 			[
 				A3(
-				$evancz$elm_playground$Playground$move,
-				x,
-				y,
-				A2($evancz$elm_playground$Playground$square, $evancz$elm_playground$Playground$blue, 40))
-			]);
+				$joakin$elm_canvas$Canvas$toHtml,
+				_Utils_Tuple2($author$project$Main$width, $author$project$Main$height),
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'border', '10px solid rgba(0,0,0,0.1)')
+					]),
+				_List_fromArray(
+					[
+						$author$project$Main$clearScreen,
+						$author$project$Main$render(count)
+					]))
+			]));
+};
+var $author$project$Main$main = $elm$browser$Browser$element(
+	{
+		init: function (_v0) {
+			return _Utils_Tuple2(
+				{count: 0},
+				$elm$core$Platform$Cmd$none);
+		},
+		subscriptions: function (model) {
+			return $elm$browser$Browser$Events$onAnimationFrameDelta($author$project$Main$Frame);
+		},
+		update: F2(
+			function (msg, model) {
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{count: model.count + 1}),
+					$elm$core$Platform$Cmd$none);
+			}),
+		view: $author$project$Main$view
 	});
-var $author$project$Main$main = A3(
-	$evancz$elm_playground$Playground$game,
-	$author$project$Main$view,
-	$author$project$Main$update,
-	_Utils_Tuple2(0, 0));
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));
 
